@@ -39,6 +39,15 @@ mkdir src
 touch ./src/index.ts
 ```
 
+Update the file **./src/package.json** to append the code below, right over the *"dependencies"* attribute.
+
+```javascript
+  "scripts": {
+    "start": "node dist/index",
+    "webpack": "webpack --config webpack.config.ts"
+  },
+```
+
 ## Appending the project to GitHub
 
 ```bash
