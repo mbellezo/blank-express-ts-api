@@ -40,7 +40,44 @@ mkdir src
 touch ./src/index.ts
 ```
 
-Update the file **./src/package.json** to append the code below, right over the *"dependencies"* attribute.
+Update the file **webpack.config.ts** to append the source code below.
+
+```javascript
+const webpack = require("webpack");
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+
+module.exports = {
+  entry: ["webpack/hot/poll?100", "./src/index.ts"],
+  watch: true,
+  target: "node",
+  externals: [
+    nodeExternals({
+      allowlist: ["webpack/hot/poll?100"]
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/
+      }
+    ]
+  },
+  mode: "development",
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  output: {
+    path: path.join(__dirname, "dist"),
+    filename: "index.js"
+  }
+};
+```
+
+Update the file **package.json** to append the code below, right over the *"dependencies"* attribute.
 
 ```javascript
   "scripts": {
