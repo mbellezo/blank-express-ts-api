@@ -61,3 +61,7 @@ git remote add origin <YOUR_REPOSITORY_GIT_URL>
 git push -u origin master
 
 ```
+
+## License
+
+![License](https://img.shields.io/github/license/mbellezo/blank-express-ts-api?style=flat-square)
