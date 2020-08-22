@@ -4,7 +4,7 @@ Although it seems easy to bootstrap a project in typescript for Node, there are 
 
 > Project created by following section **Bootstrap a Node.js, Express, and TypeScript Project** of the tutorial from Auth0,
 [Use TypeScript to Create a Secure API with Node.js and Express:](https://auth0.com/blog/use-typescript-to-create-a-secure-api-with-nodejs-and-express-getting-started/#Bootstrap-a-Node-js--Express--and-TypeScript-Project)
- ![Auth0](../media/assets/logos/auth0-logo-fordarkbg.svg)
+<img src="../media/assets/logos/auth0-logo-fordarkbg.svg" width="64" height="64">
 
 ## Motivation
 
