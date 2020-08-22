@@ -86,6 +86,22 @@ Update the file **package.json** to append the code below, right over the *"depe
   },
 ```
 
+## Starting the project
+
+```bash
+#
+# In one console terminal invoke the webpack by running the command:
+
+yarn run webpack
+
+#
+# In another console terminal, invoke start to run the bundle
+ 
+yarn start
+```
+
+In the terminal, when you see the *"Listening on port 7000"* message, the server correctly configured to listen for requests on port 7000.
+
 ## Appending the project to GitHub
 
 ```bash

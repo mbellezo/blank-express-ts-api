@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e214c9b227373fda39b1";
+/******/ 	var hotCurrentHash = "1c8c10bfd8c37ddf2f27";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -818,6 +818,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./logger.ts":
+/*!*******************!*\
+  !*** ./logger.ts ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nexports.logger = void 0;\r\nconst pino_1 = __importDefault(__webpack_require__(/*! pino */ \"pino\"));\r\nexports.logger = pino_1.default({\r\n    name: 'ts-api',\r\n    prettyPrint: \"development\" === 'development',\r\n    level: 'debug'\r\n});\r\n\n\n//# sourceURL=webpack:///./logger.ts?");
+
+/***/ }),
+
 /***/ "./node_modules/webpack/hot/log-apply-result.js":
 /*!*****************************************!*\
   !*** (webpack)/hot/log-apply-result.js ***!
@@ -859,7 +871,7 @@ eval("/* WEBPACK VAR INJECTION */(function(__resourceQuery) {/*\n\tMIT License h
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n/**\r\n * Required External Modules\r\n */\r\nconst dotenv = __importStar(__webpack_require__(/*! dotenv */ \"dotenv\"));\r\nconst express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nconst cors_1 = __importDefault(__webpack_require__(/*! cors */ \"cors\"));\r\nconst helmet_1 = __importDefault(__webpack_require__(/*! helmet */ \"helmet\"));\r\ndotenv.config();\r\n/**\r\n * App Variables\r\n */\r\nif (!process.env.PORT) {\r\n    process.exit(1);\r\n}\r\nconst PORT = parseInt(process.env.PORT, 10);\r\nconst app = express_1.default();\r\n/**\r\n *  App Configuration\r\n */\r\napp.use(helmet_1.default());\r\napp.use(cors_1.default());\r\napp.use(express_1.default.json());\r\n/**\r\n * Server Activation\r\n */\r\nconst server = app.listen(PORT, () => {\r\n    console.log(`Listening on port ${PORT}`);\r\n});\r\nif (true) {\r\n    module.hot.accept();\r\n    module.hot.dispose(() => server.close());\r\n}\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
+eval("\r\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });\r\n}) : (function(o, m, k, k2) {\r\n    if (k2 === undefined) k2 = k;\r\n    o[k2] = m[k];\r\n}));\r\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\r\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\r\n}) : function(o, v) {\r\n    o[\"default\"] = v;\r\n});\r\nvar __importStar = (this && this.__importStar) || function (mod) {\r\n    if (mod && mod.__esModule) return mod;\r\n    var result = {};\r\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\r\n    __setModuleDefault(result, mod);\r\n    return result;\r\n};\r\nvar __importDefault = (this && this.__importDefault) || function (mod) {\r\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\r\n};\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\n/**\r\n * Required External Modules\r\n */\r\nconst dotenv = __importStar(__webpack_require__(/*! dotenv */ \"dotenv\"));\r\nconst express_1 = __importDefault(__webpack_require__(/*! express */ \"express\"));\r\nconst cors_1 = __importDefault(__webpack_require__(/*! cors */ \"cors\"));\r\nconst helmet_1 = __importDefault(__webpack_require__(/*! helmet */ \"helmet\"));\r\nconst logger_1 = __webpack_require__(/*! ../logger */ \"./logger.ts\");\r\ndotenv.config();\r\n/**\r\n * Normalize a port into a number, string, or false.\r\n */\r\nconst normalizePort = (val) => {\r\n    const port = parseInt(val, 10);\r\n    if (Number.isNaN(port)) {\r\n        // named pipe\r\n        return val;\r\n    }\r\n    if (port >= 0) {\r\n        // port number\r\n        return port;\r\n    }\r\n    return false;\r\n};\r\n/**\r\n * App Variables\r\n */\r\nif (!process.env.PORT) {\r\n    process.exit(1);\r\n}\r\nconst PORT = normalizePort(process.env.PORT || '3000');\r\nconst app = express_1.default();\r\n/**\r\n *  App Configuration\r\n */\r\napp.use(helmet_1.default());\r\napp.use(cors_1.default());\r\napp.use(express_1.default.json());\r\n/**\r\n * Server Activation\r\n */\r\nconst server = app.listen(PORT, () => {\r\n    const addr = server.address();\r\n    const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;\r\n    logger_1.logger.info(`Listening on ${bind}`);\r\n});\r\n/**\r\n * Event listener for HTTP server \"listening\" event.\r\n */\r\nprocess.on('uncaughtException', uncaughtException => {\r\n    logger_1.logger.error('Uncaught Exception at: %s - message: %s', uncaughtException.stack, uncaughtException.message);\r\n});\r\nprocess.on('unhandledRejection', (reason) => {\r\n    logger_1.logger.error('Unhandled Rejection at: %s - message: %s', reason.stack, reason.message);\r\n});\r\n/**\r\n * Listen on provided port, on all network interfaces.\r\n */\r\n/**\r\n * Event listener for HTTP server \"error\" event.\r\n */\r\nconst onError = (error) => {\r\n    if (error.syscall !== 'listen') {\r\n        throw error;\r\n    }\r\n    const bind = typeof PORT === 'string' ? `Pipe ${PORT}` : `Port ${PORT}`;\r\n    // handle specific listen errors with friendly messages\r\n    switch (error.code) {\r\n        case 'EACCES':\r\n            logger_1.logger.error(`${bind} requires elevated privileges`);\r\n            process.exit(1);\r\n            break;\r\n        case 'EADDRINUSE':\r\n            logger_1.logger.error(`${bind} is already in use`);\r\n            process.exit(1);\r\n            break;\r\n        default:\r\n            throw error;\r\n    }\r\n};\r\nserver.on('error', onError);\r\nif (true) {\r\n    module.hot.accept();\r\n    module.hot.dispose(() => server.close());\r\n}\r\n\n\n//# sourceURL=webpack:///./src/index.ts?");
 
 /***/ }),
 
@@ -915,6 +927,17 @@ eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///externa
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"helmet\");\n\n//# sourceURL=webpack:///external_%22helmet%22?");
+
+/***/ }),
+
+/***/ "pino":
+/*!***********************!*\
+  !*** external "pino" ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"pino\");\n\n//# sourceURL=webpack:///external_%22pino%22?");
 
 /***/ })
 
